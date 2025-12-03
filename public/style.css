@@ -25,7 +25,6 @@ body {
     min-height: 100vh;
     align-items: center;
 
-    background-image: url("background.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
