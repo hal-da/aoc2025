@@ -35,7 +35,8 @@ const solve = (puzzle) => {
         }
         rollsRemoved += rollsRemovedThisRound
         removableRolls.forEach(roll => {
-            input[roll[0]][roll[1]] = '.'
+            const [i,j] = roll
+            input[i][j] = '.'
         })
     } while (rollsRemovedThisRound !== 0 && puzzle === 2)
     console.log(rollsRemoved)
