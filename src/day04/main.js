@@ -7,8 +7,10 @@ const solve = (puzzle) => {
         let adjacentRolls = 0
         for (let k = -1; k <= 1; k++) {
             for (let l = -1; l <= 1; l++) {
-                if (i + k >= 0 && j + l >= 0 && i + k < input.length && j + l < input[i].length && !(k === 0 && l === 0)) {
-                    if (input[i + k][j + l] === '@') {
+                const ik = i + k
+                const jl = j + l
+                if (ik >= 0 && jl >= 0 && ik < input.length && jl < input[i].length && !(k === 0 && l === 0)) {
+                    if (input[ik][jl] === '@') {
                         adjacentRolls++
                         if (adjacentRolls === 4) return false
                     }
@@ -35,7 +37,7 @@ const solve = (puzzle) => {
         }
         rollsRemoved += rollsRemovedThisRound
         removableRolls.forEach(roll => {
-            const [i,j] = roll
+            const [i, j] = roll
             input[i][j] = '.'
         })
     } while (rollsRemovedThisRound !== 0 && puzzle === 2)
@@ -44,5 +46,3 @@ const solve = (puzzle) => {
 
 solve(1)
 solve(2)
-
-
